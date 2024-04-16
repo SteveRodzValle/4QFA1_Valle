@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <body>
+
+        <div class="container">
+            <h1>Sign Up, For a Dating App!</h1>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Prefer not to mention</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interests">Interests:</label>
+                    <textarea id="interests" rows="4"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        
+            <div id="output"></div>
+        </div>
+        
+        <script>
+            const form = document.getElementById('signupForm');
+            const fullNameInput = document.getElementById('fullName');
+            const emailInput = document.getElementById('email');
+            const genderSelect = document.getElementById('gender');
+            const interestsInput = document.getElementById('interests');
+            const outputDiv = document.getElementById('output');
+        
+            function onBlurInput(x) {
+                if (x.value.trim() === '') {
+                    x.classList.add('error');
+                } else {
+                    x.classList.remove('error');
+                    x.classList.add('success');
+                }
+            }
+        
+            function onFocusInput(x) {
+                x.classList.remove('error');
+                x.classList.remove('success');
+            }
+        
+            fullNameInput.onblur = function() {
+                onBlurInput(fullNameInput);
+            };
+        
+            fullNameInput.onfocus = function() {
+                onFocusInput(fullNameInput);
+            };
+        
+            emailInput.onblur = function() {
+                onBlurInput(emailInput);
+            };
+        
+            emailInput.onfocus = function() {
+                onFocusInput(emailInput);
+            };
+        
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                onBlurInput(fullNameInput);
+                onBlurInput(emailInput);
+                const fullName = fullNameInput.value;
+                const email = emailInput.value;
+                const gender = genderSelect.value;
+                const interests = interestsInput.value;
+                outputDiv.innerHTML = '<p>Full Name: ' + fullName + '</p>' +
+                          '<p>Email: ' + email + '</p>' +
+                          '<p>Gender: ' + gender + '</p>' +
+                          '<p>Interests: ' + interests + '</p>';
+                ;
+            };
+        
+            form.onreset = function() {
+                onBlurInput(fullNameInput);
+                onBlurInput(emailInput);
+                onBlurInput(interestsInput);
+                outputDiv.innerHTML = '';
+            };
+        </script>
+        
+    </body>
+</html>

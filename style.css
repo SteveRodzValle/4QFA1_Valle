@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: pink;
+    margin: 0;
+    padding: 0;
+    background-image: url('heart.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 520px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: pink;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#e68fbf;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FF69B4;
+}
+
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 5x;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e68fbf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+button:hover {
+    background-color: #bd2665;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.error {
+    border: 2px solid #ff4d4d !important;
+}
+
+.success {
+    border: 2px solid #4CAF50 !important;
+}
